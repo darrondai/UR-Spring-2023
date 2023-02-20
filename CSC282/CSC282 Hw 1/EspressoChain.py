@@ -22,3 +22,15 @@ def EspressoChain(distances, profits, k):
         dp[j] = maxProf
 
     return dp[len(distances)-1]
+
+# driver code
+import time
+startTime = time.perf_counter()
+
+import sys
+distances = [eval(i) for i in sys.argv[1].split(',')]
+profits = [eval(i) for i in sys.argv[2].split(',')]
+k = eval(sys.argv[3])
+print('Max Profit: ' + str(EspressoChain(distances, profits, k)))
+
+print('Execution Time: ' + str((time.perf_counter() - startTime)*1000) + ' ms')

@@ -20,3 +20,14 @@ def LakeOntario(distances, M):
             count += 1
         i += 1
     return count
+
+# driver code
+import time
+startTime = time.perf_counter()
+
+import sys
+distances = [eval(i) for i in sys.argv[1].split(',')]
+M = eval(sys.argv[2])
+print('Min Stops: ' + str(LakeOntario(distances, M)))
+
+print('Execution Time: ' + str((time.perf_counter() - startTime)*1000) + ' ms')
